@@ -4,7 +4,7 @@ import type { LinksFunction, MetaFunction } from "remix";
 import styles from "~/styles/generated.css";
 
 export const meta: MetaFunction = () => {
-    return { title: "New Remix App" };
+    return { title: "#シャニマスリプパ" };
 };
 
 /**
