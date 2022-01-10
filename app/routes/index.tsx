@@ -1,4 +1,5 @@
 import { tweets } from "../consts";
+import { TweetList } from "../components/TweetList";
 
 function Index() {
     return (
@@ -27,13 +28,17 @@ function Index() {
 
 const Root = () => {
     return (
-        <div className="bg-pattern">
-            <div className="flex-col p-8">
-                {tweets.map((t) => (
-                    <div key={t.id_str} className="mb-4">
-                        <span className="whitespace-pre-wrap">{t.full_text}</span>
-                    </div>
-                ))}
+        <div>
+            <div className="inline-flex items-center w-full h-20 bg-white border-b-2 mb-1 px-4">
+                <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-pink-500 to-yellow-400 py-0.5">
+                    <span className="tracking-tighter">#</span>
+                    <span className="pr-4" style={{ letterSpacing: -8 }}>
+                        <span style={{ letterSpacing: -12 }}>シ</span>ャニマ<span style={{ letterSpacing: -13 }}>スリ</span>プパ
+                    </span>
+                </h1>
+            </div>
+            <div className="bg-pattern border-t-2 border-slate-400 p-8">
+                <TweetList tweets={tweets} />
             </div>
         </div>
     );
