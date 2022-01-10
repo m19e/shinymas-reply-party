@@ -1,4 +1,6 @@
-export default function Index() {
+import { tweets } from "../consts";
+
+function Index() {
     return (
         <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
             <h1>Welcome to Remix</h1>
@@ -22,3 +24,19 @@ export default function Index() {
         </div>
     );
 }
+
+const Root = () => {
+    return (
+        <div className="bg-pattern">
+            <div className="flex-col p-8">
+                {tweets.map((t) => (
+                    <div key={t.id_str} className="mb-4">
+                        <span className="whitespace-pre-wrap">{t.full_text}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default Root;
