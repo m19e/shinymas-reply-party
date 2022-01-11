@@ -29,7 +29,7 @@ function Index() {
 
 const Root = () => {
     return (
-        <div>
+        <>
             <div className="inline-flex items-center w-full h-20 bg-white border-b-2 mb-1 px-4">
                 <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-pink-500 to-yellow-400 py-0.5">
                     <span className="tracking-tighter">#</span>
@@ -41,7 +41,7 @@ const Root = () => {
             <div className="bg-pattern border-t-2 border-slate-400 p-8">
                 <TweetList tweets={tweets} />
             </div>
-        </div>
+        </>
     );
 };
 
