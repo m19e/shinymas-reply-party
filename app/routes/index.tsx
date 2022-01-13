@@ -27,6 +27,8 @@ function Index() {
     );
 }
 
+const idols = ["all", "meguru", "juri", "chiyuki", "asahi", "madoka", "hinana"];
+
 const Root = () => {
     return (
         <>
@@ -38,7 +40,15 @@ const Root = () => {
                     </span>
                 </h1>
             </div>
-            <div className="bg-pattern border-t-2 border-slate-400 p-8">
+            <div className="bg-pattern border-t-2 border-slate-400 px-8 py-4">
+                <div className="inline-flex flex-wrap gap-2 mb-4">
+                    {idols.map((idol) => (
+                        <div className={idol + " nav-item__select"}>
+                            <span className="font-sans font-black text-base 2xl:text-xl tracking-wider nav-item-label">{idol.toUpperCase()}</span>
+                        </div>
+                    ))}
+                </div>
+
                 <TweetList tweets={tweets} />
             </div>
         </>
