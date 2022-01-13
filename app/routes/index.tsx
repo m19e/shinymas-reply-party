@@ -1,4 +1,4 @@
-import { tweets } from "../consts";
+import { tweets, idols } from "../consts";
 import { TweetList } from "../components/TweetList";
 
 function Index() {
@@ -25,8 +25,6 @@ function Index() {
         </div>
     );
 }
-
-const idols = ["all", "meguru", "juri", "chiyuki", "asahi", "madoka", "hinana"];
 
 const Root = () => {
     return (
