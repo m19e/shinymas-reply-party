@@ -1,6 +1,6 @@
-import { TrimmedTweet } from "../types";
+import { TrimmedTweet, IdolName } from "../types";
 import json from "../statics/tweets.json";
 
 export const tweets = json as unknown as TrimmedTweet[];
 
-export const idols = ["all", "meguru", "juri", "chiyuki", "asahi", "madoka", "hinana"];
+export const idols: IdolName[] = ["all", "meguru", "juri", "chiyuki", "asahi", "madoka", "hinana"];
