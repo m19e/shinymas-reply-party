@@ -3,10 +3,6 @@ import type { LinksFunction, MetaFunction } from "remix";
 
 import styles from "~/styles/generated.css";
 
-export const meta: MetaFunction = () => {
-    return { title: "#シャニマスリプパ" };
-};
-
 /**
  * The `links` export is a function that returns an array of objects that map to
  * the attributes for an HTML `<link>` element. These will load `<link>` tags on
@@ -17,6 +13,10 @@ export const meta: MetaFunction = () => {
  */
 export const links: LinksFunction = () => {
     return [{ rel: "stylesheet", href: styles }];
+};
+
+export const meta: MetaFunction = () => {
+    return { title: "#シャニマスリプパ" };
 };
 
 export default function App() {
