@@ -32,12 +32,14 @@ const Root = () => {
     return (
         <>
             <div className="inline-flex items-center w-full h-20 bg-white border-b-2 mb-1 px-4">
-                <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-pink-500 to-yellow-400 py-0.5">
-                    <span className="tracking-tighter">#</span>
-                    <span className="pr-4" style={{ letterSpacing: -8 }}>
-                        <span style={{ letterSpacing: -12 }}>シ</span>ャニマ<span style={{ letterSpacing: -13 }}>スリ</span>プパ
-                    </span>
-                </h1>
+                <Link to="/">
+                    <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-pink-500 to-yellow-400 py-0.5">
+                        <span className="tracking-tighter">#</span>
+                        <span className="pr-4" style={{ letterSpacing: -8 }}>
+                            <span style={{ letterSpacing: -12 }}>シ</span>ャニマ<span style={{ letterSpacing: -13 }}>スリ</span>プパ
+                        </span>
+                    </h1>
+                </Link>
             </div>
             <div className="bg-pattern border-t-2 border-slate-400 px-8 py-4">
                 <div className="inline-flex flex-wrap gap-2 mb-4">
