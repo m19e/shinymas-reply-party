@@ -1,7 +1,6 @@
-import { Link } from "remix";
-
 import { tweets, idols } from "../consts";
 import { Header } from "../components/Header";
+import { IdolLink } from "../components/IdolLink";
 import { TweetList } from "../components/TweetList";
 
 function Index() {
@@ -36,11 +35,7 @@ const Root = () => {
             <div className="bg-pattern border-t-2 border-slate-400 px-8 py-4">
                 <div className="inline-flex flex-wrap gap-2 mb-4">
                     {idols.map((idol) => (
-                        <Link key={idol} to={`/idols/${idol}`}>
-                            <div className={`${idol} nav-item__${idol === "all" ? "select" : "unselect"}`}>
-                                <span className="font-sans font-black text-base 2xl:text-xl tracking-wider nav-item-label">{idol.toUpperCase()}</span>
-                            </div>
-                        </Link>
+                        <IdolLink key={idol} idol={idol} isActive={idol === "all"} />
                     ))}
                 </div>
                 <TweetList tweets={tweets} />
