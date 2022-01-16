@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const IdolLinkLavel = ({ idol }: Props) => {
-    return <span className="font-sans font-black text-base 2xl:text-xl tracking-wider nav-item-label">{idol.toUpperCase()}</span>;
+    return <span className="nav-item-label">{idol.toUpperCase()}</span>;
 };
