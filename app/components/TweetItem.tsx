@@ -52,10 +52,17 @@ export const TweetItem: FC<Props> = ({ tweet }) => {
     const time = getDisplayTime(tweet.created_at);
 
     return (
-        <div className="flex flex-col gap-2 mb-4">
-            <span className="whitespace-pre-wrap">{masked}</span>
+        <div className="flex flex-col mb-4 bg-white">
+            <span className="text-sm sm:text-base whitespace-pre-wrap">{masked}</span>
             <div className="inline-flex justify-end">
-                <span>{time}</span>
+                <a
+                    className="text-xs sm:text-sm text-gray-400 hover:text-blue-400"
+                    href={`https://twitter.com/imassc_official/status/${tweet.id_str}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {time}
+                </a>
             </div>
         </div>
     );
