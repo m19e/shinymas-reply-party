@@ -32,9 +32,9 @@ const Idol = () => {
     return (
         <div style={{ minWidth: "400px" }}>
             <Header />
-            <div className="bg-pattern flex flex-col items-center border-t-2 border-slate-400 px-8 py-4">
-                <div className="max-w-2xl 2xl:max-w-3xl flex flex-col items-center">
-                    <div className="w-full inline-flex justify-start sm:justify-center gap-2 sm:gap-3 flex-wrap sm:flex-nowrap mb-4">
+            <div className="bg-pattern flex flex-col items-center border-t-2 border-slate-400 py-4">
+                <div className="w-5/6 max-w-xl md:max-w-2xl 2xl:max-w-3xl flex flex-col items-center">
+                    <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
                         {idols.map((idol) => (
                             <IdolNavLink key={idol} idol={idol} />
                         ))}
