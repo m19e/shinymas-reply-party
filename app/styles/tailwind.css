@@ -54,7 +54,7 @@ h1 {
 }
 
 .nav-item {
-    @apply inline-flex items-center justify-center w-28 2xl:w-36 h-8 2xl:h-10 border 2xl:border-2;
+    @apply inline-flex items-center justify-center w-24 2xl:w-28 h-8 2xl:h-9 border 2xl:border-2;
 }
 .nav-item__unselect {
     @apply nav-item bg-white;
@@ -63,7 +63,7 @@ h1 {
     @apply nav-item text-white;
 }
 .nav-item-label {
-    @apply font-black text-base 2xl:text-xl tracking-wider;
+    @apply font-black text-sm 2xl:text-base tracking-wider;
 
     font-family: "Noto Sans JP";
 }
