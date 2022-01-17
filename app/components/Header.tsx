@@ -13,10 +13,12 @@ const Logo = () => {
 
 export const Header = () => {
     return (
-        <div className="inline-flex items-center w-full h-20 bg-white border-b-2 mb-1 px-4">
-            <Link to="/">
-                <Logo />
-            </Link>
+        <div className="w-full inline-flex justify-center items-center h-20 bg-white border-b-2 mb-1 px-4">
+            <div className="w-full max-w-4xl">
+                <Link to="/">
+                    <Logo />
+                </Link>
+            </div>
         </div>
     );
 };
