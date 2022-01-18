@@ -9,6 +9,10 @@
     font-family: "Zen Maru Gothic";
 }
 
+.noto-sans-jp {
+    font-family: "Noto Sans JP";
+}
+
 .bg-pattern {
     background-color: #e6f8ff;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c8f0ff' fill-opacity='0.7' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
@@ -65,5 +69,8 @@
 .nav-item-label {
     @apply font-black text-sm 2xl:text-base tracking-wider;
 
-    font-family: "Noto Sans JP";
+    @apply noto-sans-jp
+}
+.tweet-text {
+    font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
