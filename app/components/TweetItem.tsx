@@ -74,7 +74,6 @@ const DecoratedText = ({ tweet }: Props) => {
 };
 
 export const TweetItem: FC<Props> = ({ tweet }) => {
-    const masked = maskTweet(tweet);
     const time = getDisplayTime(tweet.created_at);
 
     return (
