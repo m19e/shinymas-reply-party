@@ -52,7 +52,7 @@ export const TweetItem: FC<Props> = ({ tweet }) => {
     const time = getDisplayTime(tweet.created_at);
 
     return (
-        <div className="flex flex-col mb-4 bg-white">
+        <div className="flex flex-col mb-4 px-4 pt-4 bg-white rounded-lg shadow-md border border-gray-500">
             <span className="text-sm sm:text-base whitespace-pre-wrap">{masked}</span>
             <div className="inline-flex justify-end">
                 <a
