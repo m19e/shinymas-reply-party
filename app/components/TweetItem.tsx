@@ -47,13 +47,39 @@ const getDisplayTime = (created_at: string) => {
     return formatDisplayTime({ Y, M, D, h, m, s, separator: { date: "-", span: " ", time: ":" } });
 };
 
+const createDecoratedHtml = (tweet: TrimmedTweet) => {
+    let result = maskTweet(tweet);
+    const tags = tweet.entities.hashtags ?? [];
+    const medias = tweet.entities.media ?? [];
+    if (tags.length) {
+        for (const tag of tags) {
+            const text = "#" + tag.text;
+            result = result.split(text).join(`<span class="whitespace-nowrap text-blue-400">${text}</span>`);
+        }
+    }
+    if (medias.length) {
+        for (const media of medias) {
+            const { display_url, url } = media;
+            result = result
+                .split(url)
+                .join(`<a class="whitespace-nowrap text-blue-400" href="${url}" target="_blank" rel="noopener noreferrer">${display_url}</a>`);
+        }
+    }
+
+    return result;
+};
+
+const DecoratedText = ({ tweet }: Props) => {
+    return <p className="block whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: createDecoratedHtml(tweet) }}></p>;
+};
+
 export const TweetItem: FC<Props> = ({ tweet }) => {
     const masked = maskTweet(tweet);
     const time = getDisplayTime(tweet.created_at);
 
     return (
         <div className="flex flex-col mb-4 px-4 pt-4 bg-white rounded-lg shadow-md border border-gray-500">
-            <span className="text-sm sm:text-base whitespace-pre-wrap">{masked}</span>
+            <DecoratedText tweet={tweet} />
             <div className="inline-flex justify-end">
                 <a
                     className="text-xs sm:text-sm text-gray-400 hover:text-blue-400"
