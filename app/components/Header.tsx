@@ -2,7 +2,7 @@ import { Link } from "remix";
 
 const Logo = () => {
     return (
-        <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-pink-500 to-yellow-400 py-0.5">
+        <h1 className="zen-maru text-5xl text-transparent bg-clip-text bg-gradient-to-b from-pink-500 to-yellow-400 py-0.5">
             <span className="tracking-tighter">#</span>
             <span className="pr-4" style={{ letterSpacing: -8 }}>
                 <span style={{ letterSpacing: -12 }}>シ</span>ャニマ<span style={{ letterSpacing: -13 }}>スリ</span>プパ

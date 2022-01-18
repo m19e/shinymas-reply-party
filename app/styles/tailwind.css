@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
+.zen-maru {
     font-family: "Zen Maru Gothic";
 }
 
