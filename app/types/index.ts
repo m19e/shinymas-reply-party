@@ -2,6 +2,7 @@ import type { TweetV1 } from "twitter-api-v2";
 
 export interface TrimmedTweet extends PickedTweetV1 {
     full_text: string;
+    idol: CharacterName;
 }
 
 type PickedTweetV1 = Pick<
