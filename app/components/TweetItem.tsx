@@ -51,7 +51,6 @@ const createDecoratedHtml = (tweet: TrimmedTweet) => {
     let result = maskTweet(tweet);
     const tags = tweet.entities.hashtags ?? [];
     const medias = tweet.entities.media ?? [];
-
     if (tags.length) {
         for (const tag of tags) {
             const text = "#" + tag.text;
@@ -66,10 +65,8 @@ const createDecoratedHtml = (tweet: TrimmedTweet) => {
             result = result.split(url).join(link);
         }
     }
-
     return result;
 };
-
 const DecoratedText = ({ tweet }: Props) => {
     return <p className="block whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: createDecoratedHtml(tweet) }}></p>;
 };
