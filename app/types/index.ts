@@ -10,3 +10,5 @@ type PickedTweetV1 = Pick<
 >;
 
 export type IdolName = "all" | "meguru" | "juri" | "chiyuki" | "asahi" | "madoka" | "hinana";
+
+export type CharacterName = "meguru" | "juri" | "chiyuki" | "asahi" | "madoka" | "hinana" | "hazuki";
