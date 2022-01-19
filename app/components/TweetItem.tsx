@@ -51,18 +51,19 @@ const createDecoratedHtml = (tweet: TrimmedTweet) => {
     let result = maskTweet(tweet);
     const tags = tweet.entities.hashtags ?? [];
     const medias = tweet.entities.media ?? [];
+
     if (tags.length) {
         for (const tag of tags) {
             const text = "#" + tag.text;
-            result = result.split(text).join(`<span class="whitespace-nowrap text-blue-400">${text}</span>`);
+            const span = `<span class="whitespace-nowrap text-blue-400">${text}</span>`;
+            result = result.split(text).join(span);
         }
     }
     if (medias.length) {
         for (const media of medias) {
             const { display_url, url } = media;
-            result = result
-                .split(url)
-                .join(`<a class="whitespace-nowrap text-blue-400" href="${url}" target="_blank" rel="noopener noreferrer">${display_url}</a>`);
+            const link = `<a class="whitespace-nowrap text-blue-400" href="${url}" target="_blank" rel="noopener noreferrer">${display_url}</a>`;
+            result = result.split(url).join(link);
         }
     }
 
