@@ -77,9 +77,11 @@ export const TweetItem: FC<Props> = ({ tweet }) => {
     const time = getDisplayTime(tweet.created_at);
 
     return (
-        <div className="flex flex-col mb-4 px-4 pt-4 bg-white rounded-lg shadow-md border border-gray-500">
-            <DecoratedText tweet={tweet} />
-            <div className="inline-flex justify-end">
+        <div className="flex flex-col bg-white rounded-lg shadow-md border border-gray-500">
+            <div className="px-4 pt-4">
+                <DecoratedText tweet={tweet} />
+            </div>
+            <div className="inline-flex justify-end px-2">
                 <a
                     className="text-xs sm:text-sm text-gray-400 hover:text-blue-400"
                     href={`https://twitter.com/imassc_official/status/${tweet.id_str}`}
