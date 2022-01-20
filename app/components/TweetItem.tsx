@@ -69,7 +69,7 @@ const createDecoratedHtml = (tweet: TrimmedTweet) => {
     return result;
 };
 const DecoratedText = ({ tweet }: Props) => {
-    return <p className="block whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: createDecoratedHtml(tweet) }}></p>;
+    return <p className="block whitespace-pre-wrap leading-relaxed" dangerouslySetInnerHTML={{ __html: createDecoratedHtml(tweet) }}></p>;
 };
 
 const IdolLabel: FC<{ idol: TrimmedTweet["idol"] }> = ({ idol }) => {
