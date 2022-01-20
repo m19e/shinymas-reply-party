@@ -75,7 +75,13 @@ const Idol = () => {
                 navigate("/idols/all");
             }
         } else {
-            setTweets(typedTweets.filter((t) => t.idol === data.idol));
+            if (tweets.length) {
+                setTweets(typedTweets.filter((t) => t.idol === data.idol));
+            } else {
+                setTimeout(() => {
+                    setTweets(typedTweets.filter((t) => t.idol === data.idol));
+                }, 1600);
+            }
         }
     }, [data.idol, params.idol]);
 
@@ -89,7 +95,7 @@ const Idol = () => {
                             <IdolNavLink key={nav} idol={nav} />
                         ))}
                     </div>
-                    <TweetList tweets={tweets} />
+                    {tweets.length ? <TweetList tweets={tweets} /> : <TweetSkeletonList />}
                 </div>
             </div>
         </div>
