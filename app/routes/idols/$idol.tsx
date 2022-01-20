@@ -3,10 +3,11 @@ import { useLoaderData, useNavigate, useParams } from "remix";
 import type { LoaderFunction } from "remix";
 
 import type { IdolName } from "../../types";
-import { typedTweets, navs } from "../../consts";
+import { typedTweets, navs, idols } from "../../consts";
 import { Header } from "../../components/Header";
 import { IdolNavLink } from "../../components/IdolNavLink";
 import { TweetList } from "../../components/TweetList";
+import { TweetIdolLabel } from "~/components/TweetIdolLabel";
 
 const isIdolName = (name: string | undefined): name is IdolName =>
     name === "all" || name === "meguru" || name === "juri" || name === "chiyuki" || name === "asahi" || name === "madoka" || name === "hinana";
@@ -16,6 +17,48 @@ export const loader: LoaderFunction = ({ params }) => {
         return { idol: params.idol };
     }
     return { idol: "all" };
+};
+
+const TweetSkeleton = ({ idol }: { idol: string }) => {
+    return (
+        <div className="flex flex-col bg-white rounded-lg shadow-md border border-gray-500">
+            <TweetIdolLabel idol={idol} />
+            <div className="animate-pulse">
+                <div className="flex-1 space-y-4 px-4 py-3">
+                    <div className="grid grid-cols-2">
+                        <div className="h-3 bg-slate-200 rounded-md col-span-1"></div>
+                    </div>
+                    <div className="h-3 bg-slate-200 rounded-md"></div>
+                    <div className="space-y-8">
+                        <div className="grid grid-cols-6 gap-4">
+                            <div className="h-3 bg-slate-200 rounded-md col-span-2"></div>
+                            <div className="h-3 bg-slate-200 rounded-md col-span-2"></div>
+                        </div>
+                        <div className="space-y-4">
+                            <div className="grid grid-cols-12">
+                                <div className="h-3 bg-blue-200 rounded-md col-span-2"></div>
+                            </div>
+                            <div className="grid grid-cols-12">
+                                <div className="h-3 bg-blue-200 rounded-md col-span-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-12">
+                        <div className="h-3 bg-slate-200 rounded-md col-span-3 col-start-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+const TweetSkeletonList = () => {
+    return (
+        <div className="w-full flex flex-col gap-4">
+            {idols.map((idol) => (
+                <TweetSkeleton idol={idol} />
+            ))}
+        </div>
+    );
 };
 
 const Idol = () => {
