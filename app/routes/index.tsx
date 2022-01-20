@@ -1,21 +1,23 @@
-import { tweets, idols } from "../consts";
+import { typedTweets, idols } from "../consts";
 import { Header } from "../components/Header";
 import { IdolLink } from "../components/IdolLink";
 import { TweetList } from "../components/TweetList";
 
 const Root = () => {
     return (
-        <>
+        <div className="min-h-screen flex flex-col" style={{ minWidth: "400px" }}>
             <Header />
-            <div className="bg-pattern border-t-2 border-slate-400 px-8 py-4">
-                <div className="inline-flex flex-wrap gap-2 mb-4">
-                    {idols.map((idol) => (
-                        <IdolLink key={idol} idol={idol} isActive={idol === "all"} />
-                    ))}
+            <div className="bg-pattern flex-1 flex flex-col items-center border-t-2 border-slate-400 py-4">
+                <div className="w-5/6 max-w-xl md:max-w-2xl 2xl:max-w-3xl flex flex-col items-center">
+                    <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
+                        {idols.map((idol) => (
+                            <IdolLink key={idol} idol={idol} isActive={idol === "all"} />
+                        ))}
+                    </div>
+                    <TweetList tweets={typedTweets} />
                 </div>
-                <TweetList tweets={tweets} />
             </div>
-        </>
+        </div>
     );
 };
 
