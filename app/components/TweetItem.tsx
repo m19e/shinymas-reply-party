@@ -1,6 +1,8 @@
 import type { FC } from "react";
 import type { TrimmedTweet } from "../types";
 
+import { TweetIdolLabel } from "./TweetIdolLabel";
+
 interface Props {
     tweet: TrimmedTweet;
 }
@@ -72,26 +74,12 @@ const DecoratedText = ({ tweet }: Props) => {
     return <p className="block whitespace-pre-wrap leading-relaxed" dangerouslySetInnerHTML={{ __html: createDecoratedHtml(tweet) }}></p>;
 };
 
-const IdolLabel: FC<{ idol: TrimmedTweet["idol"] }> = ({ idol }) => {
-    return (
-        <div className="w-28 h-6 ml-0.5 mt-0.5 rounded-tl-md overflow-hidden relative">
-            <div className={idol + " w-full h-6 rounded-md absolute -left-1 -top-1 -skew-x-12"}>
-                <div className="skew-x-12">
-                    <div className="flex justify-center pl-1 pt-0.5">
-                        <span className="noto-sans-jp font-black text-sm text-white tracking-wider">{idol.toUpperCase()}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
 export const TweetItem: FC<Props> = ({ tweet }) => {
     const time = getDisplayTime(tweet.created_at);
 
     return (
         <div className="flex flex-col bg-white rounded-lg shadow-md border border-gray-500">
-            <IdolLabel idol={tweet.idol} />
+            <TweetIdolLabel idol={tweet.idol} />
             <div className="px-4 py-1">
                 <DecoratedText tweet={tweet} />
             </div>
