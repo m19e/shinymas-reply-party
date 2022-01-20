@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLoaderData, useNavigate, useParams } from "remix";
 import type { LoaderFunction } from "remix";
 
@@ -23,9 +23,16 @@ const Idol = () => {
     const params = useParams();
     const navigate = useNavigate();
 
+    const [tweets, setTweets] = useState(typedTweets);
+
     useEffect(() => {
-        if (data.idol === "all" && params.idol !== "all") {
-            navigate("/idols/all");
+        if (data.idol === "all") {
+            setTweets(typedTweets);
+            if (params.idol !== "all") {
+                navigate("/idols/all");
+            }
+        } else {
+            setTweets(typedTweets.filter((t) => t.idol === data.idol));
         }
     }, [data.idol, params.idol]);
 
@@ -39,7 +46,7 @@ const Idol = () => {
                             <IdolNavLink key={idol} idol={idol} />
                         ))}
                     </div>
-                    <TweetList tweets={typedTweets} />
+                    <TweetList tweets={tweets} />
                 </div>
             </div>
         </div>
