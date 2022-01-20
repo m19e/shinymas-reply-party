@@ -3,7 +3,7 @@ import { useLoaderData, useNavigate, useParams } from "remix";
 import type { LoaderFunction } from "remix";
 
 import type { IdolName } from "../../types";
-import { tweets, typedTweets, idols } from "../../consts";
+import { typedTweets, idols } from "../../consts";
 import { Header } from "../../components/Header";
 import { IdolNavLink } from "../../components/IdolNavLink";
 import { TweetList } from "../../components/TweetList";
