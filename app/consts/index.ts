@@ -3,7 +3,8 @@ import json from "../statics/tweets.json";
 
 export const tweets = json as unknown as TrimmedTweet[];
 
-export const idols: IdolName[] = ["all", "meguru", "juri", "chiyuki", "asahi", "madoka", "hinana"];
+export const idols: IdolName[] = ["meguru", "juri", "chiyuki", "asahi", "madoka", "hinana"];
+export const navs: IdolName[] = ["all", ...idols];
 
 export const typedTweets: TrimmedTweet[] = [
     {
