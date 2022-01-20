@@ -3,7 +3,7 @@ import { useLoaderData, useNavigate, useParams } from "remix";
 import type { LoaderFunction } from "remix";
 
 import type { IdolName } from "../../types";
-import { tweets, idols } from "../../consts";
+import { tweets, typedTweets, idols } from "../../consts";
 import { Header } from "../../components/Header";
 import { IdolNavLink } from "../../components/IdolNavLink";
 import { TweetList } from "../../components/TweetList";
@@ -39,7 +39,7 @@ const Idol = () => {
                             <IdolNavLink key={idol} idol={idol} />
                         ))}
                     </div>
-                    <TweetList tweets={tweets} />
+                    <TweetList tweets={typedTweets} />
                 </div>
             </div>
         </div>
