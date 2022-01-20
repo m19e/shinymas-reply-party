@@ -76,10 +76,10 @@ export const TweetItem: FC<Props> = ({ tweet }) => {
 
     return (
         <div className="flex flex-col bg-white rounded-lg shadow-md border border-gray-500">
-            <div className="w-32 h-6 ml-0.5 mt-0.5 rounded-tl-md overflow-hidden relative">
-                <div className={tweet.idol + " w-28 h-6 rounded-md absolute -left-3 -top-1 -skew-x-12"}>
+            <div className="w-28 h-6 ml-0.5 mt-0.5 rounded-tl-md overflow-hidden relative">
+                <div className={tweet.idol + " w-full h-6 rounded-md absolute -left-1 -top-1 -skew-x-12"}>
                     <div className="skew-x-12">
-                        <div className="flex justify-center pl-3 pt-0.5">
+                        <div className="flex justify-center pl-1 pt-0.5">
                             <span className="noto-sans-jp font-black text-sm text-white tracking-wider">{tweet.idol.toUpperCase()}</span>
                         </div>
                     </div>
