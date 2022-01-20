@@ -88,6 +88,11 @@ export const TweetItem: FC<Props> = ({ tweet }) => {
             <div className="px-4">
                 <DecoratedText tweet={tweet} />
             </div>
+            {tweet.entities.media && tweet.entities.media.length && (
+                <div className="px-2 pt-2">
+                    <img src={tweet.entities.media[0].media_url_https} alt="media" />
+                </div>
+            )}
             <div className="inline-flex justify-end px-2">
                 <a
                     className="text-xs sm:text-sm text-gray-400 hover:text-blue-400"
