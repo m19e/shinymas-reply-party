@@ -75,7 +75,7 @@ export const TweetItem: FC<Props> = ({ tweet }) => {
     const time = getDisplayTime(tweet.created_at);
 
     return (
-        <div className="w-full flex flex-col bg-white rounded-lg shadow-md border border-gray-500">
+        <div className="flex flex-col bg-white rounded-lg shadow-md border border-gray-500">
             <div className="w-28 h-6 ml-0.5 mt-0.5 rounded-tl-md overflow-hidden relative">
                 <div className={tweet.idol + " w-full h-6 rounded-md absolute -left-1 -top-1 -skew-x-12"}>
                     <div className="skew-x-12">

@@ -8,7 +8,7 @@ interface Props {
 
 export const TweetList: FC<Props> = ({ tweets }) => {
     return (
-        <div className="flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4">
             {tweets.map((t) => (
                 <TweetItem key={t.id_str} tweet={t} />
             ))}
