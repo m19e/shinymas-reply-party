@@ -56,6 +56,11 @@
     background-color: #ffc639;
     border-color: #ffc639;
 }
+.hazuki {
+    color: #8adfff;
+    background-color: #8adfff;
+    border-color: #8adfff;
+}
 
 .nav-item {
     @apply inline-flex items-center justify-center w-24 2xl:w-28 h-8 2xl:h-9 border 2xl:border-2;
