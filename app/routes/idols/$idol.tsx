@@ -3,7 +3,7 @@ import { useLoaderData, useNavigate, useParams } from "remix";
 import type { LoaderFunction } from "remix";
 
 import type { IdolName } from "../../types";
-import { typedTweets, idols } from "../../consts";
+import { typedTweets, navs } from "../../consts";
 import { Header } from "../../components/Header";
 import { IdolNavLink } from "../../components/IdolNavLink";
 import { TweetList } from "../../components/TweetList";
@@ -42,8 +42,8 @@ const Idol = () => {
             <div className="bg-pattern flex-1 flex flex-col items-center border-t-2 border-slate-400 py-4">
                 <div className="w-5/6 max-w-xl md:max-w-2xl 2xl:max-w-3xl flex flex-col items-center">
                     <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
-                        {idols.map((idol) => (
-                            <IdolNavLink key={idol} idol={idol} />
+                        {navs.map((nav) => (
+                            <IdolNavLink key={nav} idol={nav} />
                         ))}
                     </div>
                     <TweetList tweets={tweets} />
