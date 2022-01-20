@@ -54,8 +54,9 @@ const createDecoratedHtml = (tweet: TrimmedTweet) => {
     if (tags.length) {
         for (const tag of tags) {
             const text = "#" + tag.text;
+            const fullwidth = "＃" + tag.text;
             const span = `<span class="whitespace-nowrap text-blue-400">${text}</span>`;
-            result = result.split(text).join(span);
+            result = result.split(text).join(span).split(fullwidth).join(span);
         }
     }
     if (medias.length) {
