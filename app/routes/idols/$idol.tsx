@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLoaderData, useNavigate, useParams } from "remix";
-import type { LoaderFunction } from "remix";
+import type { LoaderFunction, MetaFunction } from "remix";
 
+import CardImage from "~/statics/images/icon-250x250.png";
 import type { IdolName } from "../../types";
 import { typedTweets, navs, idols } from "../../consts";
 import { Header } from "../../components/Header";
@@ -17,6 +18,35 @@ export const loader: LoaderFunction = ({ params }) => {
         return { idol: params.idol };
     }
     return { idol: "all" };
+};
+
+export const meta: MetaFunction = ({ params }) => {
+    if (isIdolName(params.idol)) {
+        return {
+            title: params.idol.toUpperCase() + " | #シャニマスリフ゜ハ゜",
+            description: "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+            "og:site_name": "#シャニマスリフ゜ハ゜",
+            "og:title": "#シャニマスリフ゜ハ゜",
+            "og:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+            "og:image": CardImage,
+            "twitter:image": CardImage,
+            "twitter:card": "summary",
+            "twitter:title": "#シャニマスリフ゜ハ゜",
+            "twitter:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        };
+    }
+    return {
+        title: "#シャニマスリフ゜ハ゜",
+        description: "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        "og:site_name": "#シャニマスリフ゜ハ゜",
+        "og:title": "#シャニマスリフ゜ハ゜",
+        "og:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        "og:image": CardImage,
+        "twitter:image": CardImage,
+        "twitter:card": "summary",
+        "twitter:title": "#シャニマスリフ゜ハ゜",
+        "twitter:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+    };
 };
 
 const TweetSkeleton = ({ idol }: { idol: string }) => {
