@@ -9,15 +9,15 @@ import { TweetList } from "../components/TweetList";
 export const meta: MetaFunction = () => {
     return {
         title: "#シャニマスリフ゜ハ゜",
-        description: "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        description: "#２８３をひろげよう",
         "og:site_name": "#シャニマスリフ゜ハ゜",
         "og:title": "#シャニマスリフ゜ハ゜",
-        "og:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
-        "og:image": "https://shinymas-reply-party-git-dev-m19e.vercel.app" + CardImage,
-        "twitter:image": "https://shinymas-reply-party-git-dev-m19e.vercel.app" + CardImage,
+        "og:description": "#２８３をひろげよう",
+        "og:image": "https://shinymas-reply-party.vercel.app" + CardImage,
+        "twitter:image": "https://shinymas-reply-party.vercel.app" + CardImage,
         "twitter:card": "summary",
         "twitter:title": "#シャニマスリフ゜ハ゜",
-        "twitter:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        "twitter:description": "#２８３をひろげよう",
     };
 };
 

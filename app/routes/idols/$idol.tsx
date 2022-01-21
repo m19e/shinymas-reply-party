@@ -29,15 +29,15 @@ export const meta: MetaFunction = ({ params }) => {
     }
     return {
         title,
-        description: "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        description: "#２８３をひろげよう",
         "og:site_name": "#シャニマスリフ゜ハ゜",
         "og:title": "#シャニマスリフ゜ハ゜",
-        "og:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
-        "og:image": CardImage,
-        "twitter:image": CardImage,
+        "og:description": "#２８３をひろげよう",
+        "og:image": "https://shinymas-reply-party.vercel.app" + CardImage,
+        "twitter:image": "https://shinymas-reply-party.vercel.app" + CardImage,
         "twitter:card": "summary",
         "twitter:title": "#シャニマスリフ゜ハ゜",
-        "twitter:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        "twitter:description": "#２８３をひろげよう",
     };
 };
 
