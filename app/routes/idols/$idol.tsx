@@ -21,22 +21,14 @@ export const loader: LoaderFunction = ({ params }) => {
 };
 
 export const meta: MetaFunction = ({ params }) => {
+    let title: string;
     if (isIdolName(params.idol)) {
-        return {
-            title: params.idol.toUpperCase() + " | #シャニマスリフ゜ハ゜",
-            description: "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
-            "og:site_name": "#シャニマスリフ゜ハ゜",
-            "og:title": "#シャニマスリフ゜ハ゜",
-            "og:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
-            "og:image": CardImage,
-            "twitter:image": CardImage,
-            "twitter:card": "summary",
-            "twitter:title": "#シャニマスリフ゜ハ゜",
-            "twitter:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
-        };
+        title = params.idol.toUpperCase() + " | #シャニマスリフ゜ハ゜";
+    } else {
+        title = "#シャニマスリフ゜ハ゜";
     }
     return {
-        title: "#シャニマスリフ゜ハ゜",
+        title,
         description: "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
         "og:site_name": "#シャニマスリフ゜ハ゜",
         "og:title": "#シャニマスリフ゜ハ゜",
