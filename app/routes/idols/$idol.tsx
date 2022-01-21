@@ -55,7 +55,7 @@ const TweetSkeletonList = () => {
     return (
         <div className="w-full flex flex-col gap-4">
             {idols.map((idol) => (
-                <TweetSkeleton idol={idol} />
+                <TweetSkeleton key={idol} idol={idol} />
             ))}
         </div>
     );
