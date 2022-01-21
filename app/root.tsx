@@ -2,6 +2,7 @@ import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "rem
 import type { LinksFunction, MetaFunction } from "remix";
 
 import styles from "~/styles/generated.css";
+import CardImage from "~/statics/images/icon-250x250.png";
 
 /**
  * The `links` export is a function that returns an array of objects that map to
@@ -16,7 +17,18 @@ export const links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => {
-    return { title: "#シャニマスリフ゜ハ゜" };
+    return {
+        title: "#シャニマスリフ゜ハ゜",
+        description: "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        "og:site_name": "#シャニマスリフ゜ハ゜",
+        "og:title": "#シャニマスリフ゜ハ゜",
+        "og:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        "og:image": CardImage,
+        "twitter:image": CardImage,
+        "twitter:card": "summary",
+        "twitter:title": "#シャニマスリフ゜ハ゜",
+        "twitter:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+    };
 };
 
 export default function App() {
