@@ -80,7 +80,7 @@ export const TweetItem: FC<Props> = ({ tweet }) => {
     return (
         <div className="flex flex-col bg-white rounded-lg shadow-md border border-gray-500">
             <TweetIdolLabel idol={tweet.idol} />
-            <div className="px-4 py-1">
+            <div className="px-4 pt-1">
                 <DecoratedText tweet={tweet} />
             </div>
             {tweet.entities.media && tweet.entities.media.length && (
