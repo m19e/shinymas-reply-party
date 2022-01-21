@@ -1,11 +1,7 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "remix";
-import type { LinksFunction, MetaFunction } from "remix";
+import type { LinksFunction } from "remix";
 
 import styles from "~/styles/generated.css";
-
-export const meta: MetaFunction = () => {
-    return { title: "New Remix App" };
-};
 
 /**
  * The `links` export is a function that returns an array of objects that map to
@@ -21,7 +17,7 @@ export const links: LinksFunction = () => {
 
 export default function App() {
     return (
-        <html lang="en">
+        <html lang="ja">
             <head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width,initial-scale=1" />

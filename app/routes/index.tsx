@@ -1,24 +1,42 @@
-export default function Index() {
+import type { MetaFunction } from "remix";
+import CardImage from "~/statics/images/icon-250x250.png";
+
+import { typedTweets, navs } from "../consts";
+import { Header } from "../components/Header";
+import { IdolLink } from "../components/IdolLink";
+import { TweetList } from "../components/TweetList";
+
+export const meta: MetaFunction = () => {
+    return {
+        title: "#シャニマスリフ゜ハ゜",
+        description: "#２８３をひろげよう",
+        "og:site_name": "#シャニマスリフ゜ハ゜",
+        "og:title": "#シャニマスリフ゜ハ゜",
+        "og:description": "#２８３をひろげよう",
+        "og:image": "https://shinymas-reply-party.vercel.app" + CardImage,
+        "twitter:image": "https://shinymas-reply-party.vercel.app" + CardImage,
+        "twitter:card": "summary",
+        "twitter:title": "#シャニマスリフ゜ハ゜",
+        "twitter:description": "#２８３をひろげよう",
+    };
+};
+
+const Root = () => {
     return (
-        <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-            <h1>Welcome to Remix</h1>
-            <ul>
-                <li>
-                    <a target="_blank" href="https://remix.run/tutorials/blog" rel="noreferrer">
-                        15m Quickstart Blog Tutorial
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://remix.run/tutorials/jokes" rel="noreferrer">
-                        Deep Dive Jokes App Tutorial
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-                        Remix Docs
-                    </a>
-                </li>
-            </ul>
+        <div className="min-h-screen flex flex-col" style={{ minWidth: "400px" }}>
+            <Header />
+            <div className="bg-pattern flex-1 flex flex-col items-center border-t-2 border-slate-400 py-4">
+                <div className="w-5/6 max-w-xl md:max-w-2xl 2xl:max-w-3xl flex flex-col items-center">
+                    <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
+                        {navs.map((nav) => (
+                            <IdolLink key={nav} idol={nav} isActive={nav === "all"} />
+                        ))}
+                    </div>
+                    <TweetList tweets={typedTweets} />
+                </div>
+            </div>
         </div>
     );
-}
+};
+
+export default Root;

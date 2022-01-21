@@ -1,3 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.zen-maru-gothic {
+    font-family: "Zen Maru Gothic";
+}
+
+.noto-sans-jp {
+    font-family: "Noto Sans JP";
+}
+
+.bg-pattern {
+    background-color: #e6f8ff;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c8f0ff' fill-opacity='0.7' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+
+.all {
+    @apply text-gray-500 bg-gray-500 border-gray-500;
+}
+.meguru {
+    color: #ffe012;
+    background-color: #ffe012;
+    border-color: #ffe012;
+    @apply text-yellow-400 bg-yellow-400 border-yellow-400;
+}
+.juri {
+    color: #ffc602;
+    background-color: #ffc602;
+    border-color: #ffc602;
+    @apply text-orange-400 bg-orange-400 border-orange-400;
+}
+.chiyuki {
+    color: #fafafa;
+    background-color: #fafafa;
+    border-color: #fafafa;
+    @apply text-pink-400 bg-pink-400 border-pink-400;
+}
+.asahi {
+    color: #f30100;
+    background-color: #f30100;
+    border-color: #f30100;
+    @apply text-red-400 bg-red-400 border-red-400;
+}
+.madoka {
+    color: #be1e3e;
+    background-color: #be1e3e;
+    border-color: #be1e3e;
+}
+.hinana {
+    color: #ffc639;
+    background-color: #ffc639;
+    border-color: #ffc639;
+}
+.hazuki {
+    color: #8adfff;
+    background-color: #8adfff;
+    border-color: #8adfff;
+}
+
+.nav-item {
+    @apply inline-flex items-center justify-center w-24 2xl:w-28 h-8 2xl:h-9 border 2xl:border-2;
+}
+.nav-item__unselect {
+    @apply nav-item bg-white;
+}
+.nav-item__select {
+    @apply nav-item text-white;
+}
+.nav-item-label {
+    @apply font-black text-sm 2xl:text-base tracking-wider;
+
+    @apply noto-sans-jp
+}
+.tweet-text {
+    font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
