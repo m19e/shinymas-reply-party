@@ -1,7 +1,25 @@
+import type { MetaFunction } from "remix";
+import CardImage from "~/statics/images/icon-250x250.png";
+
 import { typedTweets, navs } from "../consts";
 import { Header } from "../components/Header";
 import { IdolLink } from "../components/IdolLink";
 import { TweetList } from "../components/TweetList";
+
+export const meta: MetaFunction = () => {
+    return {
+        title: "#シャニマスリフ゜ハ゜",
+        description: "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        "og:site_name": "#シャニマスリフ゜ハ゜",
+        "og:title": "#シャニマスリフ゜ハ゜",
+        "og:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+        "og:image": CardImage,
+        "twitter:image": CardImage,
+        "twitter:card": "summary",
+        "twitter:title": "#シャニマスリフ゜ハ゜",
+        "twitter:description": "#シャニマスリフ゜ハ゜ #２８３をひろげよう",
+    };
+};
 
 const Root = () => {
     return (
