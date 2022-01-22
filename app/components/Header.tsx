@@ -50,7 +50,7 @@ const Share = () => {
 export const Header = () => {
     return (
         <div className="w-full inline-flex justify-center items-center h-16 bg-white border-b-2 mb-1 px-4">
-            <div className="w-full max-w-4xl inline-flex justify-between items-center">
+            <div className="w-full max-w-2xl inline-flex justify-between items-center">
                 <Link to="/">
                     <LogoSmall />
                 </Link>
