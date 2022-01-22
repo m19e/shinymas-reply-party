@@ -88,9 +88,9 @@ export const TweetItem: FC<Props> = ({ tweet }) => {
                     <img src={tweet.entities.media[0].media_url_https} alt="media" />
                 </div>
             )}
-            <div className="inline-flex justify-end px-2">
+            <div className="inline-flex justify-end px-2 py-1">
                 <a
-                    className="text-xs sm:text-sm text-gray-400 hover:text-blue-400"
+                    className="text-sm text-gray-400 hover:text-blue-400"
                     href={`https://twitter.com/imassc_official/status/${tweet.id_str}`}
                     target="_blank"
                     rel="noopener noreferrer"
