@@ -108,10 +108,10 @@ const Idol = () => {
     }, [data.idol, params.idol]);
 
     return (
-        <div className="min-h-screen flex flex-col" style={{ minWidth: "400px" }}>
+        <div className="min-h-screen flex flex-col" style={{ minWidth: "440px" }}>
             <Header />
             <div className="bg-pattern flex-1 flex flex-col items-center border-t-2 border-slate-400 py-4">
-                <div className="w-5/6 max-w-xl md:max-w-2xl 2xl:max-w-3xl flex flex-col items-center">
+                <div className="w-full max-w-xl md:max-w-2xl 2xl:max-w-3xl flex flex-col items-center px-4">
                     <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
                         {navs.map((nav) => (
                             <IdolNavLink key={nav} idol={nav} />
