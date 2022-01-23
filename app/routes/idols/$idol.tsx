@@ -3,11 +3,11 @@ import { useLoaderData, useNavigate, useParams } from "remix";
 import type { LoaderFunction, MetaFunction } from "remix";
 
 import CardImage from "~/statics/images/icon-250x250.png";
-import type { IdolName } from "../../types";
-import { typedTweets, navs, idols } from "../../consts";
-import { Header } from "../../components/Header";
-import { IdolNavLink } from "../../components/IdolNavLink";
-import { TweetList } from "../../components/TweetList";
+import type { IdolName } from "~/types";
+import { typedTweets, navs, idols } from "~/consts";
+import { Body } from "~/components/BodyContainer";
+import { IdolNavLink } from "~/components/IdolNavLink";
+import { TweetList } from "~/components/TweetList";
 import { TweetIdolLabel } from "~/components/TweetIdolLabel";
 
 const isIdolName = (name: string | undefined): name is IdolName =>
@@ -108,19 +108,14 @@ const Idol = () => {
     }, [data.idol, params.idol]);
 
     return (
-        <div className="min-h-screen flex flex-col" style={{ minWidth: "440px" }}>
-            <Header />
-            <div className="bg-pattern flex-1 flex flex-col items-center border-t-2 border-slate-400 py-4">
-                <div className="w-full max-w-xl md:max-w-2xl 2xl:max-w-3xl flex flex-col items-center px-4">
-                    <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
-                        {navs.map((nav) => (
-                            <IdolNavLink key={nav} idol={nav} />
-                        ))}
-                    </div>
-                    {tweets.length ? <TweetList tweets={tweets} /> : <TweetSkeletonList />}
-                </div>
+        <Body>
+            <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
+                {navs.map((nav) => (
+                    <IdolNavLink key={nav} idol={nav} />
+                ))}
             </div>
-        </div>
+            {tweets.length ? <TweetList tweets={tweets} /> : <TweetSkeletonList />}
+        </Body>
     );
 };
 
