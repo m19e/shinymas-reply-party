@@ -3,7 +3,6 @@ import CardImage from "~/statics/images/icon-250x250.png";
 
 import { typedTweets, navs } from "../consts";
 import { Body } from "~/components/Body";
-import { Header } from "../components/Header";
 import { IdolLink } from "../components/IdolLink";
 import { TweetList } from "../components/TweetList";
 
