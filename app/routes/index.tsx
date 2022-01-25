@@ -21,14 +21,20 @@ export const meta: MetaFunction = () => {
     };
 };
 
+const IdolLinkList = () => {
+    return (
+        <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
+            {navs.map((nav) => (
+                <IdolLink key={nav} idol={nav} isActive={nav === "all"} />
+            ))}
+        </div>
+    );
+};
+
 const Root = () => {
     return (
         <Body>
-            <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
-                {navs.map((nav) => (
-                    <IdolLink key={nav} idol={nav} isActive={nav === "all"} />
-                ))}
-            </div>
+            <IdolLinkList />
             <TweetList tweets={typedTweets} />
         </Body>
     );
