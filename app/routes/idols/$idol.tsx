@@ -19,7 +19,6 @@ export const loader: LoaderFunction = ({ params }) => {
     }
     return { idol: "all" };
 };
-
 export const meta: MetaFunction = ({ params }) => {
     let title: string;
     if (isIdolName(params.idol)) {
@@ -41,6 +40,15 @@ export const meta: MetaFunction = ({ params }) => {
     };
 };
 
+const IdolNavLinkList = () => {
+    return (
+        <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
+            {navs.map((nav) => (
+                <IdolNavLink key={nav} idol={nav} />
+            ))}
+        </div>
+    );
+};
 const TweetSkeleton = ({ idol }: { idol: string }) => {
     return (
         <div className="flex flex-col bg-white rounded-lg shadow-md border border-gray-500">
@@ -109,11 +117,7 @@ const Idol = () => {
 
     return (
         <Body>
-            <div className="w-full inline-flex justify-start md:justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap mb-4">
-                {navs.map((nav) => (
-                    <IdolNavLink key={nav} idol={nav} />
-                ))}
-            </div>
+            <IdolNavLinkList />
             {tweets.length ? <TweetList tweets={tweets} /> : <TweetSkeletonList />}
         </Body>
     );
